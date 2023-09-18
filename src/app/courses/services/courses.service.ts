@@ -13,7 +13,7 @@ export class CoursesService {
   private readonly API = '/assets/courses.json';
 
   list() {
-    return this.httpClient.get<Course[]>(this.API).pipe(
+    return this.httpClient.get<Course[]>(this.API + 'd').pipe(
       first(),
       delay(5000000),
       tap((course) => console.log(course))
